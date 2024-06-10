@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="yt_dlp_FrontEnd.MainWindow"
+        Title="yt_dlp_FrontEnd"
+        Width="800" Height="600">
+        <DockPanel Name="MainDockPanel"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Menu Name="MainMenu" DockPanel.Dock="Top"
+                      HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <MenuItem Name="FileItem" Header="File">
+                                <MenuItem Name="ExitItem" Header="Exit" Click="ExitItem_OnClick"/>
+                        </MenuItem>
+                </Menu>
+                <Button Name="pwdButton" Content="pwd" DockPanel.Dock="Top" 
+                        Margin="3" Height="30" Width="100"
+                        Click="pwdButton_OnClick"/>
+                <Button Name="lsButton" Content="ls" DockPanel.Dock="Top" 
+                        Margin="3" Height="30" Width="100"
+                        Click="lsButton_OnClick"/>
+                <ListBox Name="MainListBox" DockPanel.Dock="Top" Margin="3"
+                         HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </DockPanel>
+</Window>
