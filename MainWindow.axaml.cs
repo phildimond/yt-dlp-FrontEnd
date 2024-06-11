@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Mime;
+using System.Text;
+using System.Threading;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using CliWrap;
-using CliWrap.Buffered;
 
 namespace yt_dlp_FrontEnd;
 
@@ -18,46 +20,64 @@ public partial class MainWindow : Window
     {
         Close();
     }
-
-    private async void lsButton_OnClick(object? sender, RoutedEventArgs e)
+    
+    private async void DownloadButton_OnClick(object? sender, RoutedEventArgs e)
     {
         MainListBox.Items.Clear();
-        var result = await Cli
-            .Wrap(targetFilePath:"ls")
-            .WithArguments("-la")
-            .ExecuteBufferedAsync();
 
-        MainListBox.Items.Add("Output = " + result.StandardOutput);
-        MainListBox.Items.Add("Error = " + result.StandardError);
-        MainListBox.Items.Add("Exit code = " + result.ExitCode);
-        MainListBox.Items.Add("Start time = " + result.StartTime);
-        MainListBox.Items.Add("Exit time = " + result.ExitTime);
-        MainListBox.Items.Add("Run time = " + result.RunTime);
+        List<string> s = new List<string>();
 
-        if (result.ExitCode != 0)
+        string userName = System.Environment.UserName;
+        MainListBox.Items.Add("Username = " + userName);
+        
+        try
         {
-            MainListBox.Items.Add("Command failed"); 
-        }
-    }
-    
-    private async void pwdButton_OnClick(object? sender, RoutedEventArgs e)
+            Process? p = null;
+            using (p = Process.Start(new ProcessStartInfo
+                   {
+                       FileName = "yt-dlp", // File to execute
+                       Arguments = "-f mp4 " + UrlTextBox.Text, // arguments to use
+                       WorkingDirectory = "/home/phillip/Videos",
+                       UseShellExecute = false, // use process creation semantics
+                       RedirectStandardOutput = true, // redirect standard output to this Process object
+                       RedirectStandardError = true, // redirect standard error to this Process object
+                       CreateNoWindow = true, // if this is a terminal app, don't show it
+                       WindowStyle = ProcessWindowStyle.Hidden // if this is a terminal app, don't show it
+                   }))
+            {
+                // Wait for the process to finish executing
+                if (p != null)
+                {
+                    p.OutputDataReceived += (o, args) => { s.Add("Output = " + args.Data);
+                        MainListBox.Items.Add("Output = " + args.Data);
+                    };
+                    p.ErrorDataReceived += (o, args) => { s.Add("Error = " + args.Data); };
+                    p.Exited += (o, args) => { MainListBox.Items.Add("Exit code = " + p.ExitCode); };
+                    p.BeginErrorReadLine();
+                    p.BeginOutputReadLine();
+                    await p.WaitForExitAsync();
+                    if (s.Count == 0)
+                    {
+                        MainListBox.Items.Add("Nothing in output.");
+                    }
+                    else
+                    {
+                        foreach (string str in s)
+                        {
+                            MainListBox.Items.Add(str);
+                        }
+                    }
+                }
+                else
+                {
+                    MainListBox.Items.Add("Command failed");
+                }
+            }
+        } catch (Exception ex) { MainListBox.Items.Add("EXCEPTION: " + ex.Message); }
+    } 
+
+    private void BashButton_OnClick(object? sender, RoutedEventArgs e)
     {
-        MainListBox.Items.Clear();
-        var result = await Cli
-            .Wrap(targetFilePath:"pwd")
-            .ExecuteBufferedAsync();
-
-        MainListBox.Items.Add("Output = " + result.StandardOutput);
-        MainListBox.Items.Add("Error = " + result.StandardError);
-        MainListBox.Items.Add("Exit code = " + result.ExitCode);
-        MainListBox.Items.Add("Start time = " + result.StartTime);
-        MainListBox.Items.Add("Exit time = " + result.ExitTime);
-        MainListBox.Items.Add("Run time = " + result.RunTime);
-
-        if (result.ExitCode != 0)
-        {
-            MainListBox.Items.Add("Command failed"); 
-        }
+        throw new NotImplementedException();
     }
-    
 }

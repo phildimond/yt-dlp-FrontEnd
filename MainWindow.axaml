@@ -14,12 +14,17 @@
                                 <MenuItem Name="ExitItem" Header="Exit" Click="ExitItem_OnClick"/>
                         </MenuItem>
                 </Menu>
-                <Button Name="pwdButton" Content="pwd" DockPanel.Dock="Top" 
-                        Margin="3" Height="30" Width="100"
-                        Click="pwdButton_OnClick"/>
-                <Button Name="lsButton" Content="ls" DockPanel.Dock="Top" 
-                        Margin="3" Height="30" Width="100"
-                        Click="lsButton_OnClick"/>
+                <StackPanel Name="ControlsStackPanel" DockPanel.Dock="Top" Orientation="Horizontal"
+                            HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <Label Content="URL:" Height="30" Margin="3"
+                               HorizontalAlignment="Left" VerticalAlignment="Top"
+                               HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
+                        <TextBox Name="UrlTextBox" Margin="3" Width="600"
+                                 HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <Button Name="DownloadButton" Content="Download" 
+                                Margin="3" Height="30" Width="100"
+                                Click="DownloadButton_OnClick"/>
+                </StackPanel>
                 <ListBox Name="MainListBox" DockPanel.Dock="Top" Margin="3"
                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </DockPanel>

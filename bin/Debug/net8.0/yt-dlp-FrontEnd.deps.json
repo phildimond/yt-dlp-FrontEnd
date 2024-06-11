@@ -12,8 +12,7 @@
           "Avalonia.Desktop": "11.0.10",
           "Avalonia.Diagnostics": "11.0.10",
           "Avalonia.Fonts.Inter": "11.0.10",
-          "Avalonia.Themes.Fluent": "11.0.10",
-          "CliWrap": "3.6.6"
+          "Avalonia.Themes.Fluent": "11.0.10"
         },
         "runtime": {
           "yt-dlp-FrontEnd.dll": {}
@@ -255,14 +254,6 @@
           "lib/net6.0/Avalonia.X11.dll": {
             "assemblyVersion": "11.0.10.0",
             "fileVersion": "11.0.10.0"
-          }
-        }
-      },
-      "CliWrap/3.6.6": {
-        "runtime": {
-          "lib/netcoreapp3.0/CliWrap.dll": {
-            "assemblyVersion": "3.6.6.0",
-            "fileVersion": "3.6.6.0"
           }
         }
       },
@@ -1001,13 +992,6 @@
       "sha512": "sha512-WUhPBIYqjJdBf1TgUARYNyH1clntZ435eQzR+db4fxrg4OemePX6nJTp1Lh7G/hTVEvRgWCoYFccqm/6vsfJQQ==",
       "path": "avalonia.x11/11.0.10",
       "hashPath": "avalonia.x11.11.0.10.nupkg.sha512"
-    },
-    "CliWrap/3.6.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8/WnYKDjXjqMp9ktCygmeC6kDsmSEKF4riEYNy98+nD3wOKbuxqOjmhiFMalOYlM+mUqfs3SOEowF20+loDZHQ==",
-      "path": "cliwrap/3.6.6",
-      "hashPath": "cliwrap.3.6.6.nupkg.sha512"
     },
     "HarfBuzzSharp/7.3.0": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cixP10lhn7LmU7FZPQtGGMJNL0B1x3+TJbFbb+WWtvkETOBBAvBzU+f00qDe0uWJZ/sucvswUXyESioATa4Rwg==",
+  "dgSpecHash": "02ocQyGn/1vaPLym+GvS10rh6vCp19GUIevVRO/5LvW9ul5kmAAVyQdPKgaBwNXMAqB7iXL6cIMEoaq6f5eMUg==",
   "success": true,
   "projectFilePath": "/home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/yt-dlp-FrontEnd.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,6 @@
     "/home/phillip/.nuget/packages/avalonia.themes.simple/11.0.10/avalonia.themes.simple.11.0.10.nupkg.sha512",
     "/home/phillip/.nuget/packages/avalonia.win32/11.0.10/avalonia.win32.11.0.10.nupkg.sha512",
     "/home/phillip/.nuget/packages/avalonia.x11/11.0.10/avalonia.x11.11.0.10.nupkg.sha512",
-    "/home/phillip/.nuget/packages/cliwrap/3.6.6/cliwrap.3.6.6.nupkg.sha512",
     "/home/phillip/.nuget/packages/harfbuzzsharp/7.3.0/harfbuzzsharp.7.3.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/harfbuzzsharp.nativeassets.linux/7.3.0/harfbuzzsharp.nativeassets.linux.7.3.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0/harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512",

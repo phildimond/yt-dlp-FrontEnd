@@ -124,4 +124,4 @@
 /home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/obj/Debug/net8.0/yt-dlp-FrontEnd.csproj.CopyComplete
 /home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/obj/Debug/net8.0/yt-dlp-FrontEnd.genruntimeconfig.cache
 /home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/obj/Debug/net8.0/ref/yt-dlp-FrontEnd.dll
-/home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/bin/Debug/net8.0/CliWrap.dll
+/home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/obj/Debug/net8.0/yt-dlp-FrontEnd.sourcelink.json
