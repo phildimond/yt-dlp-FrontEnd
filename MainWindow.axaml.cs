@@ -1,21 +1,57 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net.Mime;
-using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Threading;
 
 namespace yt_dlp_FrontEnd;
+
+public enum MessageTarget
+{
+    ProgressTextBlock,
+    MainListBox
+};
+
+public class MessageData
+{
+    public MessageTarget Target { get; set; }
+    public string Text { get; set; } = string.Empty;
+}
 
 public partial class MainWindow : Window
 {
     public MainWindow()
     {
         InitializeComponent();
+        
+        // Execute OnTextFromAnotherThread on the thread pool
+        // to demonstrate how to access the UI thread from
+        // there.
+        _ = Task.Run(() => OnTextFromAnotherThread(new MessageData()
+        {
+            Target = MessageTarget.MainListBox, Text = "Test Message"
+        }));
     }
 
+    private void SetText(MessageData messageData)
+    {
+        switch (messageData.Target)
+        {
+            case MessageTarget.MainListBox: 
+                MainListBox.Items.Add(messageData.Text);
+                break;
+            case MessageTarget.ProgressTextBlock:
+                ProgressTextBlock.Text = messageData.Text;
+                break;
+            default: MainListBox.Items.Add(messageData.Text);
+                break;
+        }
+    }
+
+    private void OnTextFromAnotherThread(MessageData messageData) => Dispatcher.UIThread.Post(() => SetText(messageData));
+    
     private void ExitItem_OnClick(object? sender, RoutedEventArgs e)
     {
         Close();
@@ -24,15 +60,16 @@ public partial class MainWindow : Window
     private async void DownloadButton_OnClick(object? sender, RoutedEventArgs e)
     {
         MainListBox.Items.Clear();
+        ProgressTextBlock.Text = "0%";
 
         List<string> s = new List<string>();
 
-        string userName = System.Environment.UserName;
+        string userName = Environment.UserName;
         MainListBox.Items.Add("Username = " + userName);
-        
+
         try
         {
-            Process? p = null;
+            Process? p;
             using (p = Process.Start(new ProcessStartInfo
                    {
                        FileName = "yt-dlp", // File to execute
@@ -48,36 +85,68 @@ public partial class MainWindow : Window
                 // Wait for the process to finish executing
                 if (p != null)
                 {
-                    p.OutputDataReceived += (o, args) => { s.Add("Output = " + args.Data);
-                        MainListBox.Items.Add("Output = " + args.Data);
+                    p.OutputDataReceived += (_, args) =>
+                    {
+                        if (args.Data == null) return;
+                        if (args.Data.Contains('%'))
+                        {
+//                            string ss = "Found %...";
+                            string[] bits = args.Data.Split(' ');
+                            foreach (string bit in bits)
+                            {
+                                if (bit.Contains('%'))
+                                {
+                                    Task.Run(() => OnTextFromAnotherThread(new MessageData()
+                                    {
+                                        Target = MessageTarget.ProgressTextBlock, Text = bit
+                                    }));
+//                                    ss += "Found bit [" + bit + "] ... ";
+                                    break;
+                                }
+                            }
+//                            MainListBox.Items.Add(ss);
+                        }
+                        else
+                            Task.Run(() => OnTextFromAnotherThread(new MessageData()
+                            {
+                                Target = MessageTarget.MainListBox, Text = args.Data
+                            }));
                     };
-                    p.ErrorDataReceived += (o, args) => { s.Add("Error = " + args.Data); };
-                    p.Exited += (o, args) => { MainListBox.Items.Add("Exit code = " + p.ExitCode); };
+                    p.ErrorDataReceived += (_, args) => { s.Add("Error = " + args.Data); };
+                    p.Exited += (_, _) =>
+                    {
+                        Task.Run(() => OnTextFromAnotherThread(new MessageData()
+                        {
+                            Target = MessageTarget.MainListBox, Text = "Exit code = " + p.ExitCode
+                        }));
+                    };
                     p.BeginErrorReadLine();
                     p.BeginOutputReadLine();
                     await p.WaitForExitAsync();
                     if (s.Count == 0)
                     {
-                        MainListBox.Items.Add("Nothing in output.");
-                    }
-                    else
-                    {
-                        foreach (string str in s)
+                        await Task.Run(() => OnTextFromAnotherThread(new MessageData()
                         {
-                            MainListBox.Items.Add(str);
-                        }
+                            Target = MessageTarget.MainListBox, Text = "Nothing in output."
+                        }));
                     }
                 }
                 else
                 {
-                    MainListBox.Items.Add("Command failed");
+                    await Task.Run(() => OnTextFromAnotherThread(new MessageData()
+                    {
+                        Target = MessageTarget.MainListBox, Text = "Command failed"
+                    }));
                 }
             }
-        } catch (Exception ex) { MainListBox.Items.Add("EXCEPTION: " + ex.Message); }
+        }
+        catch (Exception ex)
+        {
+            await Task.Run(() => OnTextFromAnotherThread(new MessageData()
+            {
+                Target = MessageTarget.MainListBox, Text = "EXCEPTION: " + ex.Message
+            }));
+        }
     } 
 
-    private void BashButton_OnClick(object? sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
 }
