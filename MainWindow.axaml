@@ -5,7 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="yt_dlp_FrontEnd.MainWindow"
         Title="yt_dlp_FrontEnd"
-        Width="800" Height="600">
+        Width="800" Height="600"
+        Loaded="Window_OnLoaded">
         <DockPanel Name="MainDockPanel"
                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Menu Name="MainMenu" DockPanel.Dock="Top"
@@ -20,8 +21,9 @@
                                 <Label Content="URL:" Height="30" Margin="3"
                                        HorizontalAlignment="Left" VerticalAlignment="Top"
                                        HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
-                                <TextBox Name="UrlTextBox" Margin="3" Width="600"
+                                <TextBox Name="UrlTextBox" Margin="3" Width="500"
                                          HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <CheckBox Name="SubsCheckBox" Content="Subs" Margin="3"/>
                                 <Button Name="DownloadButton" Content="Download" 
                                         Margin="3" Height="30" Width="100"
                                         Click="DownloadButton_OnClick"/>

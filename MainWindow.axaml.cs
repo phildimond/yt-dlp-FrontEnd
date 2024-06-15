@@ -64,8 +64,9 @@ public partial class MainWindow : Window
 
         List<string> s = new List<string>();
 
-        string userName = Environment.UserName;
-        MainListBox.Items.Add("Username = " + userName);
+        string arguments = "-f mp4 ";
+        if (SubsCheckBox.IsChecked == true) arguments += "--write-subs ";
+        arguments += UrlTextBox.Text;
 
         try
         {
@@ -73,7 +74,7 @@ public partial class MainWindow : Window
             using (p = Process.Start(new ProcessStartInfo
                    {
                        FileName = "yt-dlp", // File to execute
-                       Arguments = "-f mp4 " + UrlTextBox.Text, // arguments to use
+                       Arguments = arguments, // arguments to use
                        WorkingDirectory = "/home/phillip/Videos",
                        UseShellExecute = false, // use process creation semantics
                        RedirectStandardOutput = true, // redirect standard output to this Process object
@@ -90,7 +91,6 @@ public partial class MainWindow : Window
                         if (args.Data == null) return;
                         if (args.Data.Contains('%'))
                         {
-//                            string ss = "Found %...";
                             string[] bits = args.Data.Split(' ');
                             foreach (string bit in bits)
                             {
@@ -100,11 +100,9 @@ public partial class MainWindow : Window
                                     {
                                         Target = MessageTarget.ProgressTextBlock, Text = bit
                                     }));
-//                                    ss += "Found bit [" + bit + "] ... ";
                                     break;
                                 }
                             }
-//                            MainListBox.Items.Add(ss);
                         }
                         else
                             Task.Run(() => OnTextFromAnotherThread(new MessageData()
@@ -147,6 +145,14 @@ public partial class MainWindow : Window
                 Target = MessageTarget.MainListBox, Text = "EXCEPTION: " + ex.Message
             }));
         }
-    } 
+
+        UrlTextBox.Clear();
+        UrlTextBox.Focus();
+    }
+
+    private void Window_OnLoaded(object? sender, RoutedEventArgs e)
+    {
+        UrlTextBox.Focus();
+    }
 
 }

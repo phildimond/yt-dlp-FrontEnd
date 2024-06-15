@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "02ocQyGn/1vaPLym+GvS10rh6vCp19GUIevVRO/5LvW9ul5kmAAVyQdPKgaBwNXMAqB7iXL6cIMEoaq6f5eMUg==",
+  "dgSpecHash": "sy5c+zL/NnEndcz/MpXze3dFeevgSFcM6pS8Pfao4e2CEDzecSJfUyLey87L3TbOZUpJWYptoqxp7nj+tzdnfQ==",
   "success": true,
   "projectFilePath": "/home/phillip/source/Avalonia-C#/yt-dlp-FrontEnd/yt-dlp-FrontEnd.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "/home/phillip/.nuget/packages/microsoft.codeanalysis.csharp.scripting/3.8.0/microsoft.codeanalysis.csharp.scripting.3.8.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/microsoft.codeanalysis.scripting.common/3.8.0/microsoft.codeanalysis.scripting.common.3.8.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/microsoft.csharp/4.3.0/microsoft.csharp.4.3.0.nupkg.sha512",
+    "/home/phillip/.nuget/packages/microsoft.net.illink.tasks/8.0.5/microsoft.net.illink.tasks.8.0.5.nupkg.sha512",
     "/home/phillip/.nuget/packages/microsoft.netcore.platforms/2.1.2/microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "/home/phillip/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/skiasharp/2.88.7/skiasharp.2.88.7.nupkg.sha512",
