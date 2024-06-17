@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="MainWindow.axaml" value="yt-dlp-FrontEnd.csproj" />
+        <entry key="SubtitlesWindow.axaml" value="yt-dlp-FrontEnd.csproj" />
       </map>
     </option>
   </component>
