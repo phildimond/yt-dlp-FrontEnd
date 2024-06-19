@@ -12,7 +12,13 @@ public enum MessageTarget
 {
     ProgressTextBlock,
     MainListBox
-};
+}
+
+public enum FormatOptions
+{
+    None,
+    VideoAndAudioRequired
+}
 
 public class MessageData
 {
@@ -73,7 +79,7 @@ public partial class MainWindow : Window
 
         List<string> s = new List<string>();
 
-        string arguments = "-f mp4 ";
+        string arguments = "-f mp4 -f 22 ";
         if (SubsCheckBox.IsChecked == true) arguments += "--write-subs ";
         arguments += UrlTextBox.Text;
 
@@ -167,8 +173,10 @@ public partial class MainWindow : Window
         UrlTextBox.Focus();
     }
 
-    private async void FormatsItem_OnClick(object? sender, RoutedEventArgs e)
+    private async void RetrieveFormatInfo(FormatOptions formatOptions)
     {
+        MainListBox.Items.Clear();
+        
         string arguments = "-F ";
         arguments += UrlTextBox.Text;
 
@@ -195,13 +203,22 @@ public partial class MainWindow : Window
                     p.OutputDataReceived += (_, args) =>
                     {
                         if (args.Data == null) return;
-                        if (!args.Data.Contains("video only") && !args.Data.Contains("audio only") && !args.Data.Contains("images"))
+                        switch (formatOptions)
                         {
-                            Task.Run(() => OnTextFromAnotherThread(new MessageData()
-                            {
-                                Target = MessageTarget.MainListBox, Text = args.Data
-                            }));
+                            case FormatOptions.None:
+                                break; 
+                            case FormatOptions.VideoAndAudioRequired:
+                                if (args.Data.Contains("video only")
+                                    || args.Data.Contains("audio only")
+                                    || args.Data.Contains("images"))
+                                    return;
+                                break;
+                            default: return;
                         }
+                        Task.Run(() => OnTextFromAnotherThread(new MessageData()
+                        {
+                            Target = MessageTarget.MainListBox, Text = args.Data
+                        }));
                     };
                     p.ErrorDataReceived += (_, args) =>
                     {
@@ -241,4 +258,15 @@ public partial class MainWindow : Window
 
         EnableControls();
     }
+
+    private void FormatsAllItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        RetrieveFormatInfo(FormatOptions.None);
+    }
+
+    private void FormatsVideoAndAudioItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        RetrieveFormatInfo(FormatOptions.VideoAndAudioRequired);
+    }
+
 }

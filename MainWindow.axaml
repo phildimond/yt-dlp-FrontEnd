@@ -15,7 +15,10 @@
                                 <MenuItem Name="ExitItem" Header="Exit" Click="ExitItem_OnClick"/>
                         </MenuItem>
                         <MenuItem Name="OperationsItem" Header="Operations">
-                                <MenuItem Name="FormatsItem" Header="Show Formats" Click="FormatsItem_OnClick"/>
+                                <MenuItem Name="FormatsAllItem" Header="Show All Available Formats" 
+                                          Click="FormatsAllItem_OnClick"/>
+                                <MenuItem Name="FormatsVideoAndAudioItem" Header="Show Formats with Video and Audio" 
+                                          Click="FormatsVideoAndAudioItem_OnClick"/>
                         </MenuItem>
                 </Menu>
                 <StackPanel Name="StackPanel1" DockPanel.Dock="Top" Orientation="Vertical">
