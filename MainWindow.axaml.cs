@@ -33,6 +33,12 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
+    private void Window_OnLoaded(object? sender, RoutedEventArgs e)
+    {
+        UrlTextBox.Focus();
+        SubsCheckBox.IsChecked = true;
+    }
+
     private void DisableControls()
     {
         UrlTextBox.IsEnabled = false;
@@ -79,7 +85,7 @@ public partial class MainWindow : Window
 
         List<string> s = new List<string>();
 
-        string arguments = "-f mp4 -f 22 ";
+        string arguments = " "; // "-f mp4 -f 22 ";
         if (SubsCheckBox.IsChecked == true) arguments += "--write-subs ";
         arguments += UrlTextBox.Text;
 
@@ -165,11 +171,6 @@ public partial class MainWindow : Window
 
         EnableControls();
         UrlTextBox.Clear();
-        UrlTextBox.Focus();
-    }
-
-    private void Window_OnLoaded(object? sender, RoutedEventArgs e)
-    {
         UrlTextBox.Focus();
     }
 
