@@ -85,8 +85,8 @@ public partial class MainWindow : Window
 
         List<string> s = new List<string>();
 
-        string arguments = " "; // "-f mp4 -f 22 ";
-        if (SubsCheckBox.IsChecked == true) arguments += "--write-subs ";
+        string arguments = "-f mp4 "; // "-f 22 ";
+        if (SubsCheckBox.IsChecked == true) arguments += "--write-subs --sub-format srt ";
         arguments += UrlTextBox.Text;
 
         DisableControls();

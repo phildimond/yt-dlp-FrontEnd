@@ -1,0 +1,2 @@
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/win-x64/publish/yt-dlp-FrontEnd.pdb
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/win-x64/publish/yt-dlp-FrontEnd.exe

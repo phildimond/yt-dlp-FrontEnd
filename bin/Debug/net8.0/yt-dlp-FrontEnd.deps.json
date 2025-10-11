@@ -13,7 +13,7 @@
           "Avalonia.Diagnostics": "11.0.10",
           "Avalonia.Fonts.Inter": "11.0.10",
           "Avalonia.Themes.Fluent": "11.0.10",
-          "Microsoft.NET.ILLink.Tasks": "8.0.5"
+          "Microsoft.NET.ILLink.Tasks": "8.0.12"
         },
         "runtime": {
           "yt-dlp-FrontEnd.dll": {}
@@ -572,7 +572,7 @@
           "System.Threading": "4.3.0"
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.5": {},
+      "Microsoft.NET.ILLink.Tasks/8.0.12": {},
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "SkiaSharp/2.88.7": {
@@ -1079,12 +1079,12 @@
       "path": "microsoft.csharp/4.3.0",
       "hashPath": "microsoft.csharp.4.3.0.nupkg.sha512"
     },
-    "Microsoft.NET.ILLink.Tasks/8.0.5": {
+    "Microsoft.NET.ILLink.Tasks/8.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4ISW1Ndgz86FkIbu5rVlMqhhtojdy5rUlxC/N+9kPh9qbYcvHiCvYbHKzAPVIx9OPYIjT9trXt7JI42Y5Ukq6A==",
-      "path": "microsoft.net.illink.tasks/8.0.5",
-      "hashPath": "microsoft.net.illink.tasks.8.0.5.nupkg.sha512"
+      "sha512": "sha512-FV4HnQ3JI15PHnJ5PGTbz+rYvrih42oLi/7UMIshNwCwUZhTq13UzrggtXk4ygrcMcN+4jsS6hhshx2p/Zd0ig==",
+      "path": "microsoft.net.illink.tasks/8.0.12",
+      "hashPath": "microsoft.net.illink.tasks.8.0.12.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
       "type": "package",
