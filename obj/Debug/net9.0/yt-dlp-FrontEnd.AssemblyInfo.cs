@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("yt-dlp-FrontEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+739b7f423ef7be5934000c253d487d915890be82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64ccac1ee0729f54104b43d7e5b6f4007d8deee6")]
 [assembly: System.Reflection.AssemblyProductAttribute("yt-dlp-FrontEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("yt-dlp-FrontEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -227,3 +227,6 @@
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.genruntimeconfig.cache
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/ref/yt-dlp-FrontEnd.dll
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/Avalonia.Vulkan.dll
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/Avalonia.FreeDesktop.AtSpi.dll
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/Avalonia.HarfBuzz.dll
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/Avalonia.Win32.Automation.dll
