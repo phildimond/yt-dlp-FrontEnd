@@ -1,4 +1,2 @@
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/publish/yt-dlp-FrontEnd.pdb
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/publish/libHarfBuzzSharp.so
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/publish/libSkiaSharp.so
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/publish/yt-dlp-FrontEnd

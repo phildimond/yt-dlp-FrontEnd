@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "koIM0W+nfY0=",
+  "dgSpecHash": "m7/x5YM784E=",
   "success": true,
   "projectFilePath": "/home/phillip/source/Avalonia/yt-dlp-FrontEnd/yt-dlp-FrontEnd.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,7 @@
     "/home/phillip/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0/harfbuzzsharp.nativeassets.webassembly.7.3.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0/harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
-    "/home/phillip/.nuget/packages/microsoft.net.illink.tasks/9.0.9/microsoft.net.illink.tasks.9.0.9.nupkg.sha512",
+    "/home/phillip/.nuget/packages/microsoft.net.illink.tasks/9.0.15/microsoft.net.illink.tasks.9.0.15.nupkg.sha512",
     "/home/phillip/.nuget/packages/skiasharp/2.88.7/skiasharp.2.88.7.nupkg.sha512",
     "/home/phillip/.nuget/packages/skiasharp.nativeassets.linux/2.88.7/skiasharp.nativeassets.linux.2.88.7.nupkg.sha512",
     "/home/phillip/.nuget/packages/skiasharp.nativeassets.macos/2.88.7/skiasharp.nativeassets.macos.2.88.7.nupkg.sha512",
@@ -32,9 +32,9 @@
     "/home/phillip/.nuget/packages/system.io.pipelines/6.0.0/system.io.pipelines.6.0.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/home/phillip/.nuget/packages/tmds.dbus.protocol/0.15.0/tmds.dbus.protocol.0.15.0.nupkg.sha512",
-    "/home/phillip/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.9/microsoft.netcore.app.runtime.linux-x64.9.0.9.nupkg.sha512",
-    "/home/phillip/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.9/microsoft.aspnetcore.app.runtime.linux-x64.9.0.9.nupkg.sha512",
-    "/home/phillip/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.9/microsoft.netcore.app.host.linux-x64.9.0.9.nupkg.sha512"
+    "/home/phillip/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.15/microsoft.netcore.app.runtime.linux-x64.9.0.15.nupkg.sha512",
+    "/home/phillip/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.15/microsoft.aspnetcore.app.runtime.linux-x64.9.0.15.nupkg.sha512",
+    "/home/phillip/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.15/microsoft.netcore.app.host.linux-x64.9.0.15.nupkg.sha512"
   ],
   "logs": []
 }

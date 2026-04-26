@@ -22,8 +22,7 @@
                         </MenuItem>
                 </Menu>
                 <StackPanel Name="StackPanel1" DockPanel.Dock="Top" Orientation="Vertical">
-                        <StackPanel Name="ControlsStackPanel" Orientation="Horizontal"
-                                    HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <StackPanel Name="ControlsStackPanel" Orientation="Horizontal">
                                 <Label Content="URL:" Height="30" Margin="3"
                                        HorizontalAlignment="Left" VerticalAlignment="Top"
                                        HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom"/>
@@ -31,16 +30,19 @@
                                          HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                 <CheckBox Name="SubsCheckBox" Content="Subs" Margin="3"/>
                                 <Button Name="DownloadButton" Content="Download" 
-                                        Margin="3" Height="30" Width="100"
+                                        Margin="3" Height="30" Width="90"
+                                        HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
                                         Click="DownloadButton_OnClick"/>
                         </StackPanel>
                         <StackPanel Name="InfoStackPanel" Orientation="Horizontal">
                                 <Label Content="Progress:" Height="25" Margin="3"
-                                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                                       HorizontalAlignment="Left" VerticalAlignment="Center"
                                        HorizontalContentAlignment="Right" VerticalContentAlignment="Top"/>
                                 <TextBlock Name="ProgressTextBlock" Margin="3" Text="0%"
-                                           Height="22" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                           Height="22" HorizontalAlignment="Left" VerticalAlignment="Center"
                                            TextAlignment="Left" TextWrapping="NoWrap"/>
+                                <CheckBox Name="AudioOnlyCheckBox" Content="Audio Only" Margin="450,3,3,3"
+                                          HorizontalAlignment="Right" VerticalAlignment="Center"/>
                         </StackPanel>
                 </StackPanel>
                 <ListBox Name="MainListBox" DockPanel.Dock="Top" Margin="3"

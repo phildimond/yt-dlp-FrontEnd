@@ -39,7 +39,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -64,7 +64,7 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.9, )",
+              "version": "[9.0.15, )",
               "autoReferenced": true
             }
           },
@@ -82,15 +82,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-              "version": "[9.0.9, 9.0.9]"
+              "version": "[9.0.15, 9.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[9.0.9, 9.0.9]"
+              "version": "[9.0.15, 9.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.linux-x64",
-              "version": "[9.0.9, 9.0.9]"
+              "version": "[9.0.15, 9.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.107/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

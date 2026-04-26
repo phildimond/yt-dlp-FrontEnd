@@ -77,7 +77,7 @@ public partial class MainWindow : Window
     {
         Close();
     }
-    
+
     private async void DownloadButton_OnClick(object? sender, RoutedEventArgs e)
     {
         MainListBox.Items.Clear();
@@ -85,8 +85,19 @@ public partial class MainWindow : Window
 
         List<string> s = new List<string>();
 
-        string arguments = "-f mp4 "; // "-f 22 ";
-        if (SubsCheckBox.IsChecked == true) arguments += "--write-subs --sub-format srt ";
+        string arguments = "-f mp4 ";
+        if (AudioOnlyCheckBox.IsChecked == true)
+        {
+            arguments += "-x --audio-format mp3 ";
+        }
+        else
+        {
+            if (SubsCheckBox.IsChecked == true)
+            {
+                arguments += "--write-subs --convert-subs srt ";
+            }
+        }
+
         arguments += UrlTextBox.Text;
 
         DisableControls();
