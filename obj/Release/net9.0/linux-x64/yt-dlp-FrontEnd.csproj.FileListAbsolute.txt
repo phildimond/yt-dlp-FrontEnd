@@ -220,13 +220,10 @@
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.AssemblyInfo.cs
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.csproj.CoreCompileInputs.cache
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.sourcelink.json
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/Avalonia/references
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/Avalonia/original.dll
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/Avalonia/original.pdb
-/home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/Avalonia/original.ref.dll
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/refint/yt-dlp-FrontEnd.dll
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.dll
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.pdb
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-F.A79813A8.Up2Date
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/yt-dlp-FrontEnd.genruntimeconfig.cache
 /home/phillip/source/Avalonia/yt-dlp-FrontEnd/obj/Release/net9.0/linux-x64/ref/yt-dlp-FrontEnd.dll
+/home/phillip/source/Avalonia/yt-dlp-FrontEnd/bin/Release/net9.0/linux-x64/Avalonia.Vulkan.dll
