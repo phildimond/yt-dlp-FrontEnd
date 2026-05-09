@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -104,12 +105,15 @@ public partial class MainWindow : Window
         
         try
         {
+            string homePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string fullPath = Path.Combine(homePath, "Videos");
+
             Process? p;
             using (p = Process.Start(new ProcessStartInfo
                    {
                        FileName = "yt-dlp", // File to execute
                        Arguments = arguments, // arguments to use
-                       WorkingDirectory = "/home/phillip/Videos",
+                       WorkingDirectory = fullPath,
                        UseShellExecute = false, // use process creation semantics
                        RedirectStandardOutput = true, // redirect standard output to this Process object
                        RedirectStandardError = true, // redirect standard error to this Process object
